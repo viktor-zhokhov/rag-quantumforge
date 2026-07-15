@@ -44,7 +44,12 @@ def main() -> None:
     for path in files:
         text = path.read_text(encoding="utf-8")
         replaced = pattern.sub(substitute, text)
-        (BASE / path.name).write_text(replaced, encoding="utf-8")
+        # Имя файла собираем из категории (префикс до "__") и вымышленного заголовка,
+        # чтобы имена файлов тоже не выдавали исходную вселенную.
+        category = path.name.split("__", 1)[0]
+        title = replaced.splitlines()[0].lstrip("# ").strip()
+        slug = re.sub(r"[^a-z0-9-]", "", title.lower().replace(" ", "-"))
+        (BASE / f"{category}__{slug}.md").write_text(replaced, encoding="utf-8")
 
     total = sum(counts.values())
     print(f"Files processed: {len(files)}")
