@@ -1,0 +1,10 @@
+services:
+  bot:
+    build: .
+    image: rag-quantumforge
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./index:/app/index
