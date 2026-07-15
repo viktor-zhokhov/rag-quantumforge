@@ -23,6 +23,17 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Запуск бота (REPL): создать `.env` с `RAG_LLM_BACKEND` и `OPENAI_API_KEY`, затем `PYTHONPATH=. python -m rag.bot`.
+
+## Docker
+
+```bash
+docker compose build
+docker compose run --rm bot
+```
+
+Ключ и настройки берутся из `.env` (не коммитится). Индекс FAISS встроен в образ (in-process), монтируется из `./index`.
+
 Подробности — в `Project_template.md`.
 
 ## Технологический стек

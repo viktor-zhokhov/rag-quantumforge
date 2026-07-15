@@ -1,0 +1,8 @@
+.venv/
+.git/
+__pycache__/
+*.pyc
+knowledge_base/_raw/
+index_demo/
+screenshots/
+.env
