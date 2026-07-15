@@ -24,11 +24,25 @@ _(см. подробный отчёт в `research/task1-research.md`)_
 
 ## Задание 3. Создание векторного индекса
 
-- Эмбеддинг-модель: _—_
-- Размер эмбеддингов: _—_
-- Количество чанков: _—_
-- Время генерации: _—_
-- Скрипт построения индекса: `scripts/build_index.py`
+- **Эмбеддинг-модель:** `sentence-transformers/all-MiniLM-L6-v2` ([репозиторий](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)), локальная.
+- **Размер эмбеддингов:** 384.
+- **База знаний:** 36 документов из Задания 2.
+- **Чанкинг:** `RecursiveCharacterTextSplitter`, размер 1000 символов, перекрытие 150. Метаданные каждого чанка: `source` (имя файла), `title`, `category`, `chunk_id`.
+- **Количество чанков:** 294.
+- **Время генерации индекса:** ~5 секунд (CPU).
+- **Векторная БД:** FAISS, сохранён в `index/` (`index.faiss` + `index.pkl`).
+- **Скрипты:** построение — `scripts/build_index.py`, пример поиска — `scripts/query_index.py`.
+
+**Пример запроса к индексу** (`python scripts/query_index.py "Что такое Void Core?"`):
+
+```
+=== Запрос: Что такое Void Core?
+  1. [technologies__void-core.md] A Void Core was a gargantuan space station armed with a planet-destroying superlaser powered by kyber crystals...
+  2. [events__battle-of-kholar.md] The Void Core's defenses were designed for a direct, large-scale assault. By using small, one-man starcraft...
+  3. [technologies__void-core.md] After the destruction of the first Void Core, the DS-2 Void Core II Mobile Battle Station was the second...
+```
+
+Поиск возвращает осмысленные чанки по вымышленным терминам — значит, индекс работает и опирается именно на нашу базу знаний.
 
 ## Задание 4. Реализация RAG-бота
 
