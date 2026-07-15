@@ -23,5 +23,8 @@ knowledge_base/_raw/
 # Индекс FAISS коммитим как артефакт задания (перекрываем *.pkl выше)
 !index/index.pkl
 
+# Демо-индекс (с злонамеренным документом) — регенерируется scripts/demo.py
+index_demo/
+
 # OS
 .DS_Store

@@ -17,6 +17,7 @@ except ImportError:
 
 from rag.llm import get_llm
 from rag.prompts import build_messages
+from rag.defense import sanitize_context, guard_output
 
 BASE = Path(__file__).resolve().parent.parent
 INDEX_DIR = BASE / "index"
@@ -24,11 +25,12 @@ MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 class RAGPipeline:
-    def __init__(self, top_k: int = 4) -> None:
+    def __init__(self, top_k: int = 4, index_dir: Path = INDEX_DIR, defense: bool = True) -> None:
         self.top_k = top_k
+        self.defense = defense
         self.embeddings = HuggingFaceEmbeddings(model_name=MODEL_NAME)
         self.store = FAISS.load_local(
-            str(INDEX_DIR), self.embeddings, allow_dangerous_deserialization=True,
+            str(index_dir), self.embeddings, allow_dangerous_deserialization=True,
         )
         self.llm = get_llm()
 
@@ -39,7 +41,10 @@ class RAGPipeline:
         blocks = []
         for doc in docs:
             source = doc.metadata.get("source", "unknown")
-            blocks.append(f"[{source}]\n{doc.page_content}")
+            content = doc.page_content
+            if self.defense:
+                content = sanitize_context(content)
+            blocks.append(f"[{source}]\n{content}")
         return "\n\n".join(blocks)
 
     def answer(self, question: str) -> dict:
@@ -47,5 +52,8 @@ class RAGPipeline:
         context = self.build_context(docs)
         messages = build_messages(context, question)
         response = self.llm.invoke(messages)
+        answer = response.content
+        if self.defense:
+            answer = guard_output(answer)
         sources = sorted({doc.metadata.get("source", "unknown") for doc in docs})
-        return {"answer": response.content, "sources": sources}
+        return {"answer": answer, "sources": sources}
