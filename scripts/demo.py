@@ -12,6 +12,10 @@
 """
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document

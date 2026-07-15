@@ -4,6 +4,10 @@
     RAG_LLM_BACKEND=openai OPENAI_API_KEY=... python -m rag.bot
     RAG_LLM_BACKEND=ollama python -m rag.bot
 """
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from rag.pipeline import RAGPipeline
 
 
