@@ -1,0 +1,21 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Env / secrets
+.env
+*.key
+
+# Vector index artifacts
+*.index
+faiss.index
+faiss_store/
+chroma.db/
+chroma_store/
+*.pkl
+
+# OS
+.DS_Store
