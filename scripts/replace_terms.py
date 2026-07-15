@@ -44,6 +44,9 @@ def main() -> None:
     for path in files:
         text = path.read_text(encoding="utf-8")
         replaced = pattern.sub(substitute, text)
+        # Убираем фонетические транскрипции вида «(pronounced /.../)» —
+        # они могут косвенно выдать исходное название.
+        replaced = re.sub(r"\s*\(pronounced [^)]*\)", "", replaced)
         # Имя файла собираем из категории (префикс до "__") и вымышленного заголовка,
         # чтобы имена файлов тоже не выдавали исходную вселенную.
         category = path.name.split("__", 1)[0]
