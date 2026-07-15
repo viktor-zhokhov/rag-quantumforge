@@ -1,7 +1,5 @@
 # WF-2 Wraith strikecraft
 
-Please update the article to include missing information, and remove this template when finished.
-
 The WF-2 Wraith strikecraft, also called the WF-2 or simply the Wraith fighter, was the signature strikecraft of the Iron Dominion and symbol of its space superiority. Instantly recognizable from the roar of its engines as well as its unique design, the WF-2 exuded Dominion power and prestige across the galaxy, seeing use throughout the Dominion's reign. They were nicknamed Evil-Eyes or Eye-balls by members of the New Concord.
 
 The WF-2 strikecraft was a small, short-range fighter developed, manufactured, and mass produced by Sienar Fleet Systems (SFS). Developed by SFS company head Raith Sienar, the basis for the Wraith fighter could be traced back to Kuat Systems Engineering's Alpha-3 Nimbus strikecraft, along with several other outmoded models from the Old Republic. Like their predecessors, Wraith's employed two vertical wings similar in appearance to V-wing starfighters; however, the Eta-2 Actis-class light interceptor bore even more similarities with its central cockpit pod, twin ion engines, and common weapons technology. Its official production name was the Twin Ion Engine "line edition" space superiority strikecraft.

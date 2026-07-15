@@ -2,8 +2,6 @@
 
 Astra Saga (2015) 75, In the Lair of the Dragon Slug, From a Certain Point of View: The Dominion Strikes Back, Doctor Aphra (2020) 1, Astra Saga: Uprising, Very Interesting, As an Astrogation Problem, Astra Saga: The Accord Files, Astra Saga: The Galactic Explorer's Guide, Astra Saga: The High Republic: Chronicles of the Sentinel, Astra Saga: The Rise and Fall of the Iron Dominion, Astra Saga Bestiary, Vol. 1: Creatures of the Galaxy, Astra Saga: Galactic Atlas: Updated Edition
 
-Please update the article to include missing information, and remove this template when finished.
-
 Vethis was a remote, icy planet that was the sixth planet in the star system of the same name, located in the Verath sector of the galaxy's Outer Rim Territories. It was the homeworld to the primitive wampa species.
 
 It notably hosted Echo Base during the Sundering War, the temporary headquarters of the Free Accord, until the Iron Dominion located them, initiating a major confrontation known as the Battle of Vethis. In the months following, scavengers established temporary base camps on the planet to scrap the AT-ATs destroyed.

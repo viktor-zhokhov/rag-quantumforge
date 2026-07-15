@@ -1,7 +1,5 @@
 # TF-7 Talon strikecraft
 
-Please update the article to include missing information, and remove this template when finished.
-
 The TF-7 Talon strikecraft, also known as the TF-7 space superiority fighter, or TF-7 Talon fighter multi-role strikecraft, was a single-seat craft manufactured by Incom Corporation and used most famously by the Free Accord against the Iron Dominion. Renowned for its speed and maneuverability during the Sundering War, it became the backbone of the Free Accord Strikecraft Corps, being both harder hitting and tougher under fire than its main adversary, the mass-produced WF-2 Wraith strikecraft of the Dominion Navy.
 
 Years following the destruction of the Iron Dominion and the establishment of the New Concord, the TF-7 was initially retained by the New Concord Defense Fleet before eventually being replaced by newer Talon fighter models, such as the T-70 Talon fighter strikecraft, and the T-85 Talon fighter.

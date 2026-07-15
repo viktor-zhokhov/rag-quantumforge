@@ -25,7 +25,16 @@ BLOCK = [
     "no longer being up to date", "benefit from the addition",
     "editor discretion", "this article", "wookieepedia", "out of universe",
     "disambiguation", "content approaching", "three conflicting sources",
+    "update the article", "remove this template", "please update",
 ]
+
+
+def is_appearance_list(text: str) -> bool:
+    """Отсеивает абзацы-списки названий (Appearances/Sources): много запятых
+    при малом числе точек — это перечисление, а не связный текст."""
+    commas = text.count(",")
+    periods = text.count(".")
+    return commas >= 15 and commas / (periods + 1) >= 6
 
 # 36 сущностей по категориям: персонажи, планеты, технологии, организации, события, расы
 ENTITIES = {
@@ -78,6 +87,8 @@ def fetch_clean(title: str) -> str:
         if len(text) < 40:
             continue
         if any(bad in text.lower() for bad in BLOCK):
+            continue
+        if is_appearance_list(text):
             continue
         cleaned.append(text)
     result = "\n\n".join(cleaned)
