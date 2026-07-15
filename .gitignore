@@ -17,5 +17,8 @@ chroma.db/
 chroma_store/
 *.pkl
 
+# Исходные (не анонимизированные) страницы — промежуточный артефакт
+knowledge_base/_raw/
+
 # OS
 .DS_Store
